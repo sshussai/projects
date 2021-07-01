@@ -1,0 +1,15 @@
+# Postgres
+initdb /usr/local/var/postgres # location to store your dbs
+pg_ctl -D /usr/local/var/postgres start # start postgres and start on boot
+pg_ctl -D /usr/local/var/postgres stop # stop postgres and do not start on boot
+createdb mydatabasename
+dropdb mydatabasename
+psql mydatabasename # launch postgres client on the given db
+CREATE DATABASE mydatabasename;
+DROP DATABASE mydatabasename;
+## psql shell commands
+\list # List all of your actual databases.
+\c mydatabasename # Connect to another database.
+\d # List the relations of your currently connected database.
+\d mytablename # Shows information for a specific table.
+
