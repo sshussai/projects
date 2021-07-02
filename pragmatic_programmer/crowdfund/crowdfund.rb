@@ -1,9 +1,16 @@
 class Project
+
+  attr_reader :funding, :goal
+  attr_accessor :project
   
   def initialize(project, goal, funding=1000)
     @project = project.upcase
     @goal = goal
     @funding = funding
+  end
+
+  def remaining_funds
+    @goal - @funding
   end
 
   def add_funds(amount=1000)
