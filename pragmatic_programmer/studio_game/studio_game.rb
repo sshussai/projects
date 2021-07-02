@@ -32,12 +32,14 @@ class Player
   
 end
 
-p1 = Player.new("larry", 60)
-puts p1.name
-p1.name = "Lawrence"
-puts p1.name
-p1.name = "lawrence"
-puts p1.name
-puts p1.health
-puts p1.score
-puts p1
+p1 = Player.new("moe")
+p2 = Player.new("larry", 60)
+p3 = Player.new("curly", 125)
+
+players = [p1, p2, p3]
+players.each do |p|
+  p.blam
+  p.w00t
+  p.w00t
+  puts p
+end
