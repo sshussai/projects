@@ -26,4 +26,11 @@ class Movie
 
 end
 
-
+if __FILE__ == $0
+  # example code that runs only if the movie.rb file is run
+  # it does not run if movie.rb is included in another file, 
+  # and that other file is run
+  m = Movie.new("goonies", 10)
+  puts m.title
+  puts m.rank
+end
