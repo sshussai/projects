@@ -41,4 +41,31 @@ describe Player do
     end
   end
 
+  context "with health greater than 100" do
+    before do
+      @player = Player.new("larry", 150)
+    end
+
+    it "is strong" do
+      expect(@player).to be_strong
+      # expect(@player.strong?).to be true
+      # @player.strong?.should be_truthy
+      # expect(@player.strong?).to eq(true)
+    end
+  end
+
+  context "with health less than or equal to 100" do
+    before do
+      @player = Player.new("larry", 100)
+    end
+
+    it "is not strong" do
+      expect(@player).not_to be_strong
+      # expect(@player.strong?).to be false
+      # @player.strong?.should be_falsey
+      # @player.strong?.should_not be_truthy
+      # expect(@player.strong?).to eq(false)
+    end
+  end
+
 end
