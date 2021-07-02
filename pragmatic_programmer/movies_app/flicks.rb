@@ -1,28 +1,12 @@
-class Movie
+require_relative 'playlist'
+require_relative 'movie'
 
-  attr_accessor :title
-  attr_reader :rank
+m1 = Movie.new("goonies", 10)
+m2 = Movie.new("ghostbusters", 9)
+m3 = Movie.new("goldfinger")
 
-  def initialize(title, rank=0)
-    @title = title.capitalize
-    @rank = rank
-  end
-
-  def normalized_rank
-    @rank / 10
-  end
-
-  def thumbs_up
-    @rank += 1
-  end
-
-  def thumbs_down
-    @rank -= 1
-  end
-
-  def to_s
-    "#{@title} has a rank of #{normalized_rank}!"
-  end
-
-end
-
+p = Playlist.new("kermit")
+p.add_movie(m1)
+p.add_movie(m2)
+p.add_movie(m3)
+p.play
