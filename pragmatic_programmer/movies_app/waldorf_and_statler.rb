@@ -6,7 +6,6 @@ module WaldorfAndStatler
 
   def self.review(movie)
     num = self.roll_die
-    puts "test: #{num}"
     case num
     when 1..2
       movie.thumbs_down

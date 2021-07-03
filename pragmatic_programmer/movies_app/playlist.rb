@@ -11,14 +11,29 @@ class Playlist
     @movies << movie
   end
 
-  def play
+  def play(viewings)
     puts "#{@name}'s playlist:"
-    puts @movies
+    puts @movies.sort
 
-    @movies.each do |m|
-      WaldorfAndStatler.review(m)
-      puts m
+    1.upto(viewings) do |count|
+      puts "\nViewing #{count}"
+      @movies.each do |m|
+        WaldorfAndStatler.review(m)
+        puts m
+      end
     end
+  end
+
+
+  def print_stats
+    puts "\n#{@name}'s Stats:"
+
+    hits, flops = @movies.partition { |m| m.hit? }
+    puts "\nHits:"
+    puts hits.sort
+
+    puts "\nFlops:"
+    puts flops.sort
   end
 
 end
@@ -33,7 +48,8 @@ if __FILE__ == $0
   p.add_movie(m2)
   p.add_movie(m3)
 
-  p.play
+  p.play(3)
+  p.print_stats
 
 end
 

@@ -9,4 +9,4 @@ p = Playlist.new("kermit")
 p.add_movie(m1)
 p.add_movie(m2)
 p.add_movie(m3)
-p.play
+p.play(3)
