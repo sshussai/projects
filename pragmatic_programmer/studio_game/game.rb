@@ -1,5 +1,6 @@
 require_relative 'die'
 require_relative 'player'
+require_relative 'game_turn'
 
 class Game
   
@@ -15,18 +16,7 @@ class Game
   def play
     puts "There are #{@players.count} players in #{@title}"
     @players.each do |p| 
-      d = Die.new
-      num = d.roll
-      case num
-      when 1..2
-        p.blam
-        puts "#{p.name} was blammed!"
-      when 3..4
-        puts "#{p.name} was skipped!"
-      else
-        p.w00t
-        puts "#{p.name} was w00ted!"
-      end
+      GameTurn.take_turn(p)
       puts p
     end
   end
