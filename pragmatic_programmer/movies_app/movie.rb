@@ -19,6 +19,13 @@ class Movie
     @snack_carbs.values.reduce(0, :+)
   end
 
+  def each_snack
+    @snack_carbs.each do |sn, sc|
+      s = Snack.new(sn, sc)
+      yield s
+    end
+  end
+
   def normalized_rank
     @rank / 10
   end

@@ -40,7 +40,6 @@ class Playlist
     end
   end
 
-
   def print_stats
     puts "\n#{@name}'s Stats:"
 
@@ -48,6 +47,9 @@ class Playlist
 
     @movies.sort.each do |m|
       puts "\n#{m.title}'s snack totals:"
+      m.each_snack do |s|
+        puts "#{s.carbs} total #{s.name} carbs"
+      end
       puts "#{m.total_carbs} grand total carbs"
     end
 
