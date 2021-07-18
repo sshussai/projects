@@ -6,9 +6,8 @@ m2 = Movie.new("ghostbusters", 9)
 m3 = Movie.new("goldfinger")
 
 p = Playlist.new("kermit")
-p.add_movie(m1)
-p.add_movie(m2)
-p.add_movie(m3)
+# p.load('superhero_movies.csv')
+p.load
 
 loop do
   puts "How many viewings? ('q' to quit)"
