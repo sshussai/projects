@@ -6,6 +6,17 @@ class Movie
   def initialize(title, rank=0)
     @title = title.capitalize
     @rank = rank
+    @snack_carbs = Hash.new(0)
+  end
+
+  def ate_snack(s)
+    @snack_carbs[s.name] += s.carbs
+    puts "#{@title} led to #{s.carbs} #{s.name} carbs"
+    puts "#{@title}'s snacks: #{@snack_carbs}"
+  end
+
+  def total_carbs
+    @snack_carbs.values.reduce(0, :+)
   end
 
   def normalized_rank
