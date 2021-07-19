@@ -54,6 +54,15 @@ class Movie
     other_movie.rank <=> @rank
   end
 
+  def to_csv
+    "#{@title},#{@rank}"
+  end
+
+  def self.from_csv(line)
+    title, rank = line.split(',')
+    Movie.new(title, Integer(rank))
+  end
+
 end
 
 if __FILE__ == $0
