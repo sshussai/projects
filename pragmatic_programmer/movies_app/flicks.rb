@@ -6,7 +6,7 @@ m1 = Movie.new("goonies", 10)
 m2 = Movie.new("ghostbusters", 9)
 m3 = Movie.new("goldfinger")
 
-p = Playlist.new("kermit")
+p = Flicks::Playlist.new("kermit")
 # p.load('superhero_movies.csv')
 p.load(ARGV.shift || 'movies.csv')
 # p.load()
