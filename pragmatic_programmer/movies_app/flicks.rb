@@ -7,16 +7,18 @@ m3 = Movie.new("goldfinger")
 
 p = Playlist.new("kermit")
 # p.load('superhero_movies.csv')
-p.load
+p.load(ARGV.shift || 'movies.csv')
+# p.load()
 
 loop do
-  puts "How many viewings? ('q' to quit)"
+  puts "\nHow many viewings? ('q' to quit)"
   ans = gets.chomp.downcase
   case ans
   when /^\d+$/
     p.play(ans.to_i)
   when 'q', 'quit', 'exit'
     p.print_stats
+    p.save
     break
   else
     puts "Please enter a number or 'q'"

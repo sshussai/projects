@@ -26,6 +26,14 @@ class Playlist
     end
   end
 
+  def save(to_file='movie_rankings.csv')
+    File.open(to_file, 'w') do |f|
+      @movies.sort.each do |m|
+        f.puts "#{m.title},#{m.rank}"
+      end
+    end
+  end
+
   def play(viewings)
     puts "#{@name}'s playlist:"
     puts @movies.sort
