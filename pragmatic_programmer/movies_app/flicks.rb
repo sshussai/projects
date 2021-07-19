@@ -1,5 +1,6 @@
 require_relative 'playlist'
 require_relative 'movie'
+require_relative 'movie3d'
 
 m1 = Movie.new("goonies", 10)
 m2 = Movie.new("ghostbusters", 9)
@@ -9,6 +10,8 @@ p = Playlist.new("kermit")
 # p.load('superhero_movies.csv')
 p.load(ARGV.shift || 'movies.csv')
 # p.load()
+m = Movie3D.new('glee', 5, 10)
+p.add_movie(m)
 
 loop do
   puts "\nHow many viewings? ('q' to quit)"
