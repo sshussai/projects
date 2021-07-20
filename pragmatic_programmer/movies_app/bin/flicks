@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+require_relative '../lib/flicks/playlist'
+
+p = Flicks::Playlist.new("kermit")
+# p.load('superhero_movies.csv')
+default_movie_file = 
+  File.join(File.dirname(__FILE__), 'movies.csv')
+p.load(ARGV.shift || default_movie_file)
+# p.load()
+
+loop do
+  puts "\nHow many viewings? ('q' to quit)"
+  ans = gets.chomp.downcase
+  case ans
+  when /^\d+$/
+    p.play(ans.to_i)
+  when 'q', 'quit', 'exit'
+    p.print_stats
+    p.save
+    break
+  else
+    puts "Please enter a number or 'q'"
+  end
+end
