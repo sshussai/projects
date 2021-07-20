@@ -1,6 +1,6 @@
-require_relative 'playlist'
-require_relative 'movie'
-require_relative 'spec_helper'
+require 'flicks/playlist'
+require 'flicks/movie'
+require 'flicks/spec_helper'
 module Flicks
   describe Playlist do
 
