@@ -1,3 +1,4 @@
+# shoutr
 # See https://git-scm.com/docs/gitattributes for more about git attribute files.
 
 # Mark the database schema as having been generated.
@@ -8,3 +9,15 @@ shoutr/yarn.lock linguist-generated
 
 # Mark any vendored files as having been vendored.
 shoutr/vendor/* linguist-vendored
+
+# pragmatic_programmer/rails-studio/eventz
+# See https://git-scm.com/docs/gitattributes for more about git attribute files.
+
+# Mark the database schema as having been generated.
+pragmatic_programmer/rails-studio/eventz/db/schema.rb linguist-generated
+
+# Mark the yarn lockfile as having been generated.
+pragmatic_programmer/rails-studio/eventz/yarn.lock linguist-generated
+
+# Mark any vendored files as having been vendored.
+pragmatic_programmer/rails-studio/eventz/vendor/* linguist-vendored
