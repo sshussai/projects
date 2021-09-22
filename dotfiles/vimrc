@@ -38,7 +38,7 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 " turn off search highlight
-" nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Folding
 " set foldenable          " enable folding
@@ -56,7 +56,7 @@ nnoremap k gk
 nnoremap B ^
 nnoremap E $
 " $/^ doesn't do anything
-" nnoremap $ <nop>
-" nnoremap ^ <nop>
+nnoremap $ <nop>
+nnoremap ^ <nop>
 " highlight last inserted text
 " nnoremap gV `[v`]
