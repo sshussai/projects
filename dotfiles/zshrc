@@ -113,6 +113,7 @@ alias gp="git push"
 alias gf="git fetch"
 alias gd="git diff"
 alias gpull="git pull"
+alias gco="git checkout"
 alias c="clear"
 
 # launch rbenv
