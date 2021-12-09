@@ -16,23 +16,45 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " https://github.com/preservim/nerdtree
-Plugin 'preservim/nerdtree'
+" Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
-" plugin on GitHub repo
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'austintaylor/vim-indentobject'
+" Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'juvenn/mustache.vim'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'majutsushi/tagbar'
+Plugin 'rking/ag.vim'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'nono/vim-handlebars'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'wookiehangover/jshint.vim'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'slim-template/vim-slim'
+" Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-cucumber'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-pastie'
+" Plugin 'tpope/vim-ragtag'
 " Plugin 'tpope/vim-rails'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-unimpaired'
+" Plugin 'tpope/vim-vividchalk'
+" Plugin 'vim-ruby/vim-ruby'
+" Plugin 'vim-scripts/Align'
+" Plugin 'vim-scripts/greplace.vim'
+" Plugin 'vim-scripts/matchit.zip'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
@@ -112,18 +134,39 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 " Split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 " Tab navigation
 nnoremap <C-N> gt
 nnoremap <C-P> gT
 " Split openings
 set splitbelow
 set splitright
-" NERDTree
-" Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Settings from maximum-awesome {{{
+" " keyboard shortcuts
+" noremap <leader>l :Align
+nnoremap <leader>a :Ag<space>
+" nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+" nnoremap <leader>] :TagbarToggle<CR>
+" nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
+" nnoremap <leader>g :GitGutterToggle<CR>
+noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" }}}
+" More settings from maximum-awesome {{{
+set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
+set encoding=utf-8
+set list                                                     " show trailing whitespace
+set listchars=tab:▸\ ,trail:▫
+set ruler                                                    " show where you are
+set scrolloff=3                                              " show context above/below cursorline
+set smartcase                                                " case-sensitive search if any caps
+set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+set wildmenu                                                 " show a navigable menu for tab completion
+set wildmode=longest,list,full
+" }}}
