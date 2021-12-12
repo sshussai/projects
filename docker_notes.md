@@ -17,20 +17,21 @@ I will create a docker file for the project that will create the image needed fo
 FROM ruby:latest 
 
 # run commands to install needed packages
-RUN apt install vim 
+RUN apt update && apt install \
+  vim
 
 # reference: https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/
 ```
 
 
 ## Build Image
-`docker build -t shaheer/ruby:latest`
+`docker build -t shaheer/ruby:latest .`
 
 ## Run a container
 `docker run --rm -ti shaheer/ruby:latest /bin/sh`
 
 ## Docker command reference
-* `docker build [TAGS]` - builds an image using a provided docker file
+* `docker build [TAGS] [PATH]` - builds an image using a provided docker file
     * `-t <TAG>` - option to add tags to the build image
 * `docker run [TAGS] [CMD]` - runs a container given an image
     * `--rm` -  remove the container after it exits
