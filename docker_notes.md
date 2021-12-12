@@ -23,12 +23,11 @@ RUN apt install vim # run commands to install needed packages
 ## Run a container
 `docker run --rm -ti shaheer/ruby:latest /bin/sh`
 
-
 ## Docker command reference
-*`docker build` - builds an image using a provided Dockerfile
-    *`-t <TAG>` - option to add tags to the build image
+* `docker build` - builds an image using a provided docker file
+    * `-t <TAG>` - option to add tags to the build image
 * `docker run` - runs a container given an image
-    *  `--rm` -  remove the container after it exits
-    *  `-it` -  runs the container an interactive mode
-* `docker images` - lists the images availabe on the local system
-    *  `-a` - lists all intermediary images
+    * `--rm` -  remove the container after it exits
+    * `-it` -  runs the container an interactive mode
+* `docker images` - lists the images available on the local system
+    * `-a` - lists all intermediary images
