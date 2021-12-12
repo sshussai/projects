@@ -25,9 +25,10 @@ RUN apt install vim # run commands to install needed packages
 
 
 ## Docker command reference
-* `docker build` - builds an image using a provided Dockerfile
-*  `-t <TAG>` - option to add tags to the build image
-*  `-a` - lists all intermediary images
+*`docker build` - builds an image using a provided Dockerfile
+    *`-t <TAG>` - option to add tags to the build image
 * `docker run` - runs a container given an image
+    *  `--rm` -  remove the container after it exits
+    *  `-it` -  runs the container an interactive mode
 * `docker images` - lists the images availabe on the local system
-
+    *  `-a` - lists all intermediary images
