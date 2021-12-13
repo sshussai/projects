@@ -1,0 +1,14 @@
+version: '3'
+services:
+  pdf_tool:
+    image: ruby:latest
+    command: bash -c 'ruby pdf_tool.rb'
+    working_dir: /usr/app/
+    volumes:
+      - ./:/usr/app/
+  img_tool:
+    image: ruby:latest
+    command: bash -c 'ruby img_tool.rb'
+    working_dir: /usr/app/
+    volumes:
+      - ./:/usr/app/
