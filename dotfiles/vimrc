@@ -3,6 +3,7 @@ syntax enable           " enable syntax processing
 " }}}
 " {{{
 " Setup vundle
+"
 " `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,7 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " https://github.com/preservim/nerdtree
-" Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'airblade/vim-gitgutter'
 " Plugin 'altercation/vim-colors-solarized'
@@ -24,7 +24,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'juvenn/mustache.vim'
 " Plugin 'kchmck/vim-coffee-script'
-" Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'leafgarland/typescript-vim'
 " Plugin 'majutsushi/tagbar'
 Plugin 'rking/ag.vim'
@@ -39,7 +38,7 @@ Plugin 'scrooloose/nerdtree'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'slim-template/vim-slim'
 " Plugin 'tpope/vim-bundler'
-" Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 " Plugin 'tpope/vim-cucumber'
 " Plugin 'tpope/vim-dispatch'
 " Plugin 'tpope/vim-endwise'
@@ -93,7 +92,6 @@ set number              " show line numbers
 set wrap                " wrap lines
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
-set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 set showmatch           " higlight matching parenthesis
 " }}}
@@ -166,7 +164,7 @@ set listchars=tab:▸\ ,trail:▫
 set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
 set smartcase                                                " case-sensitive search if any caps
-set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+set wildignore=log/**,*/node_modules/**,target/**,*/tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
 " }}}
