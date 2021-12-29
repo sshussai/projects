@@ -1,12 +1,17 @@
-[color]
-	ui = true
+[core]
+	editor = vim
 [user]
 	name = sshussai
-	email = sshussai@ualberta.ca
+	email = shaheer.hussain@activedemand.com
 [alias]
 	co = checkout
 	s = status
 	a = add
-	p = push
-	f = fetch
 	c = commit
+	p = push
+	pu = pull
+	f = fetch
+	b = branch
+	l = log
+[color]
+	ui = true
